@@ -1,5 +1,5 @@
 // public/app.js
-const BACKEND_URL = "https://web-chat-backend.onrender.com";
+const BACKEND_URL = "https://web-chat-backend-rry8.onrender.com";
 
 document.addEventListener('DOMContentLoaded', () => {
     const chat = document.getElementById('chat');
