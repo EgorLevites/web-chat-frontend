@@ -1,0 +1,38 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Chat</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4 mb-4">Web Chat</h1>
+        
+        <div id="client-count" class="alert alert-info" role="alert">
+            Connected clients: 0
+        </div>
+        
+        <div id="chat" class="mb-4">
+            <!-- Chat messages will appear here -->
+        </div>
+        
+        <div class="input-group mb-3">
+            <input type="text" id="username" class="form-control" placeholder="Username">
+        </div>
+        
+        <div class="input-group mb-3">
+            <input type="text" id="message" class="form-control" placeholder="Enter your message">
+            <button class="btn btn-primary" id="send">Send</button>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
