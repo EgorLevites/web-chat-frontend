@@ -1,23 +1,20 @@
-# Используем официальный образ Nginx как базовый
+# Use the official Nginx image as the base
 FROM nginx:alpine
 
-# Установим рабочую директорию
+# Set the working directory
 WORKDIR /usr/share/nginx/html
 
-# Удалим стандартный контент Nginx
+# Remove the default Nginx content
 RUN rm -rf ./*
 
-# Копируем файлы фронтенда в директорию Nginx
+# Copy frontend files to Nginx
 COPY index.html app.js styles.css ./
 
-# Заменяем хостинг URL на локальный URL для локального запуска
+# Replace the production backend URL with the local backend URL
 RUN sed -i 's|https://web-chat-backend-rry8.onrender.com|http://localhost:8080|g' app.js
 
-# Если у вас есть дополнительные папки (например, assets), добавьте их:
-# COPY assets/ ./assets/
-
-# Открываем порт 80 для доступа извне
+# Expose port 80
 EXPOSE 80
 
-# Запускаем Nginx в форграунд режиме
+# Run Nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
